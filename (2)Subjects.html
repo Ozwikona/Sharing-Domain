@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacSonic Subject-list</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="CSS/Science.css">
+</head>
+<style>
+    *{
+        padding: 0rem;
+        margin: 0rem;
+        box-sizing: border-box;
+    }
+    html{
+        height: 100%;
+    }
+    .container{
+        text-align: center;
+        min-height: 100%;
+        width: 100%;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .wrapper{
+        display: flex;
+        overflow-x: auto;
+    }
+    .wrapper::-webkit-scrollbar{
+        width: 0;
+    }
+    .wrapper .button{
+        text-decoration: none;
+        padding: 0.5rem;
+        margin-left: 0.5rem;
+        width: fit-content;
+        min-width: 180px;
+        border-radius: 1rem;
+        background-color: #ddd;
+    }
+
+    .local-page{
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 89, 255, 0.856),
+            white
+        );
+        border: none;
+        font-size: medium;
+        font-weight: bold;
+        font-family: Soni;
+        height: 2.5rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+        padding-left: 6.8rem;
+        padding-right: 6.8rem;
+        border-radius: 1rem;
+    }
+    .header-1{
+        font-size: 2.1rem;
+        font-family: cursive;
+        background-image: linear-gradient(
+            to left bottom,
+            rgba(0, 0, 255, 0.726),
+            rgb(255, 255, 255)
+        );
+        width: 68%;
+        margin: 0.5rem;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        border-radius: 1.8rem;
+    }
+    .header-2{
+    font-size: 1.9rem;
+    font-family: cursive;
+    background-image: linear-gradient(
+        to left bottom,
+        rgba(0, 0, 255, 0.726),
+        rgb(255, 255, 255)
+    );
+    width: 68%;
+    margin: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1.8rem;
+    }
+    .header-3{
+    font-size: medium;
+    font-weight: bold;
+    background-image: linear-gradient(
+        to left bottom,
+        rgba(0, 0, 255, 0.726),
+        rgb(255, 255, 255)
+    );
+    width: 60%;
+    margin: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1.8rem;
+    }
+
+    .h3,.h4{
+        font-weight: 977;
+    }
+
+    .card-1{
+        background-image: linear-gradient(
+            to left,
+            rgb(0, 20, 201),
+            rgba(191, 203, 255, 0.514)
+        );
+        box-shadow: 0 10px 10px -8px rgba(0,0,0,0.2);
+        font-weight: bold;
+        margin: 0.8rem;
+        margin-bottom: 1rem;
+        padding: 0.2rem;
+        border-radius: 1rem;
+    }
+    .card-2{
+        font-weight: bold;
+        margin: 1rem;
+        padding: 0.2rem;
+        border-radius: 1.5rem;
+    }
+    .card-3{
+        border-radius: 1rem;
+        margin: 0.8rem;
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 20, 201, 0.795),
+            rgb(255, 255, 255)
+        );
+    }
+
+    .hd3{
+        margin: 0.5rem;
+    }
+
+    .Grade-logo-1{
+        object-fit: fill;
+        margin: 0.5rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 1rem;
+    }
+    .Sub-logo-1{
+    object-fit: fill;
+    margin: 0.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    }
+    .Sub-logo-2{
+    object-fit: cover;
+    margin: 0.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    }
+    .Sub-logo-3{
+    object-fit: fill;
+    margin: 0.2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    width: 5rem;
+    height: 6rem;
+    border-radius: 1rem;
+    }
+    .Grade-logo-2{
+    object-fit: fill;
+    text-align: center;
+    margin-right: 1rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    }
+
+    .Ai-logo{
+    object-fit: cover;
+    margin: 1rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1rem;
+    }
+    .TextBooks-logo{
+        object-fit: cover;
+        margin: 1rem;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 1rem;
+    }
+
+    .Exp-button{
+        background-image: linear-gradient(
+            to left bottom,
+            rgb(103, 153, 245),
+            white
+        );
+        width: 10rem;
+        height: 2.5rem;
+        margin: 0.2rem;
+        border: 1px solid blue;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: poppins;
+        padding: 0.5rem;
+        border-radius: 0.8rem;
+    }
+
+    .Exp-2button{
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 89, 255, 0.856),
+            white
+        );
+        width: 10rem;
+        height: 3rem;
+        border: none;
+        border-radius: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: poppins;
+        padding: 0.5rem;
+    }
+
+    .Exp-3button{
+        background-image: linear-gradient(
+            to left bottom,
+            rgb(103, 153, 245),
+            white
+        );
+        width: 8rem;
+        height: 2.5rem;
+        margin: 0.2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border: 1px solid blue;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: poppins;
+        border-radius: 0.8rem;
+    }
+
+    .Emoji{
+        width: 2rem;
+        height: 2rem;
+    }
+    .expander-header {
+      backdrop-filter: blur(10px);
+      padding: 0.6rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+    .expander-header:hover {
+      backdrop-filter: blur(10px);
+    }
+    .expander-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      padding: 0 0.5rem;
+    }
+    .expander.open .expander-content {
+      max-height: 300px;
+      padding: 1rem 0.5rem;
+    }
+</style>
+
+<body>    
+<main class="container">
+
+    <br>
+
+    <header>
+        <div class="wrapper">
+            <a class="button" data-aos="" data-aos-duration="2000" type="button" onclick="location.href='(2a)Science.html'" style="color: black;">Science Stream</a>
+            <a class="button" data-aos="" data-aos-duration="2000" type="button" onclick="location.href='(2b)Commerce.html'" style="color: black;">Commercial Stream</a>
+            <a class="button" data-aos="" data-aos-duration="2000" type="button" onclick="location.href='(2c)Technical.html'" style="color: black;">Technical Stream</a>
+            <a class="button" data-aos="" data-aos-duration="2000" type="button" onclick="location.href='(2d)Agriculture.html'" style="color: black;">Agricultural Stream</a>
+        </div>
+    </header>
+
+    <br>
+
+    <center>
+        <table>
+            <tr>
+                <th class="header-1"> <h4 class="h4">Compulsory</h2> </th>
+                <th><img class="Sub-logo-1" src="images/Y-15.png" alt="Makuya"></th>
+            </tr>
+
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </center>
+
+    <div class="card-1">
+        <center>
+        <h3 style="margin: 0.5rem;">Mathematics</h3>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><img data-aos="zoom-in" data-aos-duration="2000" class="Grade-logo-2" src="images/Y-7.png" alt="Makuya"></td>
+                <td>
+                <button data-aos="" data-aos-duration="2000" class="Exp-button" type="button" onclick="location.href='(A)Mathematics.html'">Exam Papers</button> 
+                <br><br>                 
+                <button data-aos="" data-aos-duration="2000" class="Exp-button" type="button" onclick="location.href='Practice/(1)math.html'">Practice</button>
+                </td>
+            </tr>
+        </table>
+        </center>
+    </div>
+
+    <!-- <div class="card-1">
+        <center>
+        <h3 style="margin: 0.5rem;">Mathematical Literacy</h3>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><img data-aos="zoom-in" data-aos-duration="2000" class="Grade-logo-2" src="images/Y-7.png" alt="Makuya"></td>
+                <td>
+                <button data-aos="" data-aos-duration="2000" class="Exp-button" type="button" onclick="location.href=''">Exam Papers (?)</button> 
+                <br><br>                 
+                <button data-aos="" data-aos-duration="2000" class="Exp-button" type="button" onclick="location.href=''">Practice (?)</button>
+                </td>
+            </tr>
+        </table>
+        </center>
+    </div> -->
+
+    <div class="card-1">
+        <center>
+        <h3 style="margin: 0.5rem;">Life Orientation</h3>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><img data-aos="zoom-in" data-aos-duration="2000" class="Grade-logo-2" src="images/Y-7.png" alt="Makuya"></td>
+                <td>
+                <button data-aos="" data-aos-duration="2000" class="Exp-button" type="button" onclick="location.href='https://drive.google.com/drive/folders/1WYZTlzPYjodbUL37yqcZRjcZMVuyK86z?usp=drive_link'">Exam Papers</button> 
+                <br><br>                    
+                </td>
+            </tr>
+        </table>
+        </center>
+    </div>
+
+    <div class="card-3">
+        <div class="book">
+        <h3 style="padding: 0.7rem;">Home Language</h3>
+         <center>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><img data-aos="zoom-in" data-aos-duration="2000" class="Grade-logo-2" src="images/Y-7.png" alt="Makuya"></td>
+                    <td>
+                    <button data-aos="" data-aos-duration="2000" class="Exp-button" style="border: none;">SA Languages</button> 
+                    <br><br>                    
+                    </td>
+                </tr>
+            </table>
+        </center>
+
+      <div class="expander">
+        <div class="expander-header">📁 View List<span>📄</span></div>
+        <div class="expander-content">
+            <table>
+                <tr>
+                    <th>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href='(F)English-2.html'">English</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Afrikaans (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Tshivenda (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">isiZulu (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">isiXhosa (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">isiNdebele (?)</button>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Sesotho (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Setswana (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Sepedi (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Xitsonga (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Siswati (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" style="border: none;">🇿🇦 SA HLs</button>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="card-3">
+        <div class="book">
+        <h3 style="padding: 0.7rem;">First Additional Language</h3>
+         <center>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><img data-aos="zoom-in" data-aos-duration="2000" class="Grade-logo-2" src="images/Y-7.png" alt="Makuya"></td>
+                    <td>
+                    <button data-aos="" data-aos-duration="2000" class="Exp-button" style="border: none;">SA Languages</button> 
+                    <br><br>                    
+                    </td>
+                </tr>
+            </table>
+         </center>
+
+      <div class="expander">
+        <div class="expander-header">📁 View List<span>📄</span></div>
+        <div class="expander-content">
+            <table>
+                <tr>
+                    <th>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href='(E)English-1.html'">English</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Afrikaans (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Tshivenda (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">isiZulu (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">isiXhosa (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">isiNdebele (?)</button>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Sesotho (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Setswana (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Sepedi (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Xitsonga (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" type="button" onclick="location.href=''">Siswati (?)</button>
+                        <button data-aos="" data-aos-duration="2000" class="Exp-3button" style="border: none;">🇿🇦 SA FALs</button>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+ 
+    <br>
+        <h1 style="font-family: cursive; font-weight: 1000; font-size: 1.3rem;"> <img class="Emoji" src="Emoji/E-1.webp" alt="MS"> MORE <img class="Emoji" src="Emoji/E-1.webp" alt="MS"> </h1>
+    <br>
+
+        <center>
+            <table>
+                <tr>
+                    <th>
+                        <h2 style="font-family: cursive; font-weight: 1000; font-size: 1.3rem; position: relative; top: 0.7rem;">Study Buddy</h2>
+                        <img data-aos="zoom-in" data-aos-duration="1000" type="button" onclick="location.href='(4)MacSonic AI.html'" style="border: solid 2px burlywood;" class="TextBooks-logo" src="images/Y-26.svg" alt="Makuya">
+                    </th>
+
+                    <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+
+                    <th>
+                        <h2 style="font-family: cursive; font-weight: 1000; font-size: 1.3rem; position: relative; top: 0.7rem;">MacDomain</h2>
+                        <img data-aos="zoom-in" data-aos-duration="1000" type="button" onclick="location.href='/dashboard'" style="border: solid 2px burlywood;" class="TextBooks-logo" src="images/Y-22.png" alt="Makuya">
+                    </th>
+                </tr>
+            </table>
+        </center>
+        <!-- <br> -->
+        <center>
+            <table>
+                <tr>
+                    <th>
+                        <h2 style="font-family: cursive; font-weight: 1000; font-size: 1.3rem; position: relative; top: 0.7rem;">AudioBooks</h2>
+                        <img data-aos="zoom-in" data-aos-duration="1000" type="button" onclick="location.href='(3)AudioBook.html'" style="border: solid 2px burlywood;" class="TextBooks-logo" src="images/Y-19.svg" alt="Makuya">
+                    </th>
+
+                    <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+
+                    <th>
+                        <h2 style="font-family: cursive; font-weight: 1000; font-size: 1.3rem; position: relative; top: 0.7rem;">MacStream</h2>
+                        <img data-aos="zoom-in" data-aos-duration="1000" type="button" onclick="location.href='Youtube/YouTube.html'" style="border: solid 2px burlywood;" class="TextBooks-logo" src="images/Y-13.png" alt="Makuya">
+                    </th>
+                </tr>
+            </table>
+        </center>
+        <!-- <br> -->
+        <center>
+            <table>
+                <tr>
+                    <th>
+                        <h2 style="font-family: cursive; font-weight: 1000; font-size: 1.3rem; position: relative; top: 0.7rem;">Study Snippets</h2>
+                        <img data-aos="zoom-in" data-aos-duration="1000" type="button" onclick="location.href='(5)Textbooks.html'" style="border: solid 2px burlywood;" class="TextBooks-logo" src="images/Y-28.svg" alt="Makuya">
+                    </th>
+
+                    <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+
+                    <th>
+                        <h2 style="font-family: cursive; font-weight: 1000; font-size: 1.3rem; position: relative; top: 0.7rem;">Master Plan</h2>
+                        <img data-aos="zoom-in" data-aos-duration="1000" type="button" onclick="location.href='(8)ATP.html'" style="border: solid 2px burlywood;" class="TextBooks-logo" src="images/Y-27.svg" alt="Makuya">
+                    </th>
+                </tr>
+            </table>
+        </center>
+
+<br>
+    <button class="local-page" type="button" onclick="location.href='index.html'">Home</button>
+
+</main>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    // Expander toggle
+    document.querySelectorAll(".expander").forEach(expander => {
+      expander.querySelector(".expander-header").addEventListener("click", () => {
+        expander.classList.toggle("open");
+      });
+    });
+</script>
+
+</body>
+</html>
